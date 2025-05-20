@@ -1,4 +1,5 @@
 #!/bin/bash
-echo "all the variables passed to script: $@"
+persion=surekha
+echo "all the variables passed to script:persion@"
 echo "hellow hi"
 
