@@ -1,3 +1,3 @@
 #!/bin/bash
-echo"enter your pin number"
+echo "enter your pin number"
 read $PIN
