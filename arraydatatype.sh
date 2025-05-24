@@ -1,4 +1,4 @@
 #!/bin/bash
 names=("sur" "jee" "nav" "bhan" "ladd")
 echo "${names[0]}"
-echo "all names==${[@]}"
+echo "all names=${names[@]}"
