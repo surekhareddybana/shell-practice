@@ -1,6 +1,6 @@
 #!/bin/bash
 number=$1
-if [number lt 10]
+if [ number -lt 10 ]
 then
 	echo "given number $number is -lt 10 "
 
