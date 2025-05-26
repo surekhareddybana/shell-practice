@@ -8,3 +8,4 @@ then
 echo -e "$G installed dnf $N"
 else
 echo -e "$r install dnf with root user $n"
+fi
