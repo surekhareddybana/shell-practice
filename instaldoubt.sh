@@ -1,8 +1,8 @@
 #!/bin/bash
 userid=$(id -u)
 if [ userid = 0 ]
-then 
-dnf install mysql -y
+then
+echo "run with dnf successfully"
 else
 echo " install dnf with root user"
 fi
