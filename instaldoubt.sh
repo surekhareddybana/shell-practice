@@ -9,4 +9,5 @@ dnf install mysql -y
 echo "run with dnf successfully"
 else
 echo "install dnf with root user and fail"
+exit1
 fi
