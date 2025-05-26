@@ -1,11 +1,8 @@
 #!/bin/bash
 userid=$(id -u)
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
-if [ $userid -eq 0 ]
-then
-echo -e "$G installed dnf $N"
+if [ userid = 0 ]
+then 
+dnf install mysql -y
 else
-echo -e "$R install dnf with root user $N"
+echo " install dnf with root user"
 fi
