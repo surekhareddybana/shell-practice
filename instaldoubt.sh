@@ -1,8 +1,8 @@
 #!/bin/bash
 userid=$(id -u )
-if [ $userid -eq 0 ]
+if [ $userid -ne 0 ]
 then
-echo "dnf installed with root user"
+echo "error::dnf installed  with root user"
 else "plz install dnf with root user"
 exit1
 fi
