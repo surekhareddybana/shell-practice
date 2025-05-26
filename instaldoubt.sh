@@ -5,7 +5,7 @@ then
 echo "error::dnf installed  with root user"
 else 
 echo "plz install dnf with root user"
-exit 1
+#exit 1
 fi
 dnf install mysql -y
 
