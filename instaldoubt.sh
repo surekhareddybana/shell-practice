@@ -1,6 +1,6 @@
 #!/bin/bash
 userid=$(id -u)
-if [ userid = 0 ]
+if [ userid -eq 0 ]
 then
 echo "run with dnf successfully"
 else
