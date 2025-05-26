@@ -7,5 +7,5 @@ if [ $userid -eq 0]
 then
 echo -e "$G installed dnf $N"
 else
-echo -e "$r install dnf with root user $n"
+echo -e "$R install dnf with root user $N"
 fi
