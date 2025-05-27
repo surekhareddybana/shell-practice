@@ -36,6 +36,17 @@ else
 echo "python3 is install failure"
 exit 1
 fi
+dnf list installed nginx
+if [ $? -ne 0 ]
+then
+echo "nginx is not installed.. go and installed"
+if [ $? -eq 0 ]
+then 
+echo "nginx is installed successfull"
+else
+echo "nginx installed failure"
+exit 1
+fi
 
 else
 echo "python installed"
