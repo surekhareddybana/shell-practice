@@ -3,7 +3,7 @@ userid=$(id -u)
 if [ $userid -eq 0 ]
 then
 echo "dnf installed  with root user"
-exit 1
+
 else
 echo "please install dnf with root user"
 fi
