@@ -48,9 +48,6 @@ echo "nginx installed failure"
 exit 1
 fi
 
-else
-echo "python installed"
-exit 1 
-fi
+
 
 
