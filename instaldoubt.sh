@@ -17,6 +17,7 @@ then
 echo "dnf install successfull"
 else
 echo "dnf install failure"
+exit 1
 else
 echo "dnf installed..nothing to do"
 fi
