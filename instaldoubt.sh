@@ -46,6 +46,8 @@ echo "nginx is installed successfull"
 else
 echo "nginx installed failure"
 exit 1
+else 
+echo "nginx is installed..nothing to do"
 fi
 
 
