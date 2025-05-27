@@ -1,18 +1,22 @@
 #!/bin/bash
 userid=$(id -u)
-if [ $userid -eq 0 ]
+if [ $userid -ne 0 ]
 then
-echo "dnf installed  with root user"
-
+echo "Error:: dnf install  with root user"
+exit 1
 else
 echo "please install dnf with root user"
 fi
+dnf list installed mysql
+if [ $? -ne 0 ]
+then
+echo "dnf not installed..please go and install"
 dnf install mysql -y
-
 if [ $? -eq 0 ]
 then
-echo "run with dnf successfully"
+echo "dnf install successfull"
 else
-echo "install dnf with root user and fail"
-exit 1
+echo "dnf install failure"
+else
+echo "dnf installed..nothing to do"
 fi
