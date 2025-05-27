@@ -35,6 +35,7 @@ echo "python3 installed successfull"
 else
 echo "python3 is install failure"
 exit 1
+fi
 else
 echo "python3 is installed..nothing to do"
 fi
@@ -49,6 +50,7 @@ echo "nginx is installed successfull"
 else
 echo "nginx installed failure"
 exit 1
+fi
 else 
 echo "nginx is installed..nothing to do"
 fi
