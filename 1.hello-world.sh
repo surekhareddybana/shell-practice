@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello shell-practice"
+echo " hello shell-practice "
