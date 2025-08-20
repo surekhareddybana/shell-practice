@@ -5,5 +5,5 @@ then
 	echo "given number $number is -lt 10 "
 
 else 
-echo "if given $number is not -lt 10"
+echo "if given number  $number is not -lt 10"
 fi
