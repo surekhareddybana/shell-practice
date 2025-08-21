@@ -11,13 +11,13 @@ SCRIPT_NAME="$(echo $0 | cut -d "." -f1)" # hear $0 means current script name
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "script started executing at : $(date)" &>>$LOG_FILE
+echo "script started executing at : $(date)"  | tee -a $LOG_FILE
 
 
 
 if [ $USERID -ne 0 ]
 then 
-echo -e "$R error:: $N please run the script with root access" &>>$LOG_FILE
+echo -e "$R error:: $N please run the script with root access" | tee -a $LOG_FILE
 exit 1
 else
 echo "your running with root access" &>>$LOG_FILE
