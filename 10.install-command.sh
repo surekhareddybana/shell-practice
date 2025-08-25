@@ -2,13 +2,15 @@
 userid=$(id -u)
 if [ $userid -ne 0 ]
 then
-echo "Error:: dnf install  with root user"
+echo "Error:: please run the script  with root user"
 exit 1
-#else
-#echo "please install dnf with root user"
+else
+echo "your running with root access"
 fi
+
+
 dnf list installed mysql
-# check mysql is installed or not..if mysql is installed $?-0
+# check mysql is installed or not..if mysql is installed $?=0
 #if mysql is not installed $? not equal 0
 if [ $? -ne 0 ]
 then
@@ -24,6 +26,8 @@ fi
 else
 echo "dnf installed..nothing to do"
 fi
+
+
 dnf list installed python3
 if [ $? -ne 0 ]
 then
