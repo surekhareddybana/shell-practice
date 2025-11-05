@@ -25,6 +25,16 @@ if [ $# -lt 2 ]
 then 
 USAGE
 fi
+check_root(){
+if [ $userid -ne 0 ]
+then
+echo -e "$R please run the script with root acess $N " |  tee -a  $LOG_FILE
+exit 1
+else
+echo -e "$G script running with root access $N"
+fi
+}
+check_root
 
 if [ ! -d $SOURCE_DIR ]
 then
@@ -40,31 +50,32 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ ! -z $FILES ]
+if [ ! -z "$FILES" ]
 then
 echo "files found"
 TIMESTAMP=$(date +%F-%H-%M-%s)
 ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip"
 find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
 
-if [ -f $ZIP_FILE ]
+if [ -f "$ZIP_FILE" ]
 then
   echo -e "successfully  created zipfile"
-  while ifs=read -r filepath
+  while IFS= read -r filepath
   do 
 echo "deleting the file: $filepath" | tee -a $LOG_FILE
 rm -rf $filepath
-done  <<< $FILES
+done  <<< "$FILES"
 
 echo "logsfiles olderthan 14 days deleted"
   else 
   echo "zip file creation failure"
   exit 1
   fi
-else
-echo "no files hear"
+  else 
+  echo "no files hear"
+ 
+  fi
 
-fi
 
 
 VALIDATE(){
@@ -77,12 +88,4 @@ exit 1
 fi
 }
 
-check_root(){
-if [ $userid -ne 0 ]
-then
-echo -e "$R please run the script with root acess $N " |  tee -a  $LOG_FILE
-exit 1
-else
-echo -e "$G script running with root access $N"
-fi
-}
+
