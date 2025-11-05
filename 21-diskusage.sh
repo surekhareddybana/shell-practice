@@ -12,5 +12,5 @@ then
 MSG="high disk usage on $PARTITION: $USAGE"
 echo "$PARTITION: $USAGE" 
 
-done <<< $DISK_USAGE
+done <<< "$DISK_USAGE"
 echo $MSG
