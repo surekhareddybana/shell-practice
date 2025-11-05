@@ -12,7 +12,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-check_root
+#check_root
 mkdir -p $LOGS_FOLDER
 
 USAGE(){
