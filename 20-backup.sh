@@ -24,9 +24,11 @@ USAGE(){
 if [ $# -lt 2 ]
 then 
 USAGE
+exit 1
 fi
+
 check_root(){
-if [ $userid -ne 0 ]
+if [ $USERID -ne 0 ]
 then
 echo -e "$R please run the script with root acess $N " |  tee -a  $LOG_FILE
 exit 1
@@ -63,7 +65,8 @@ then
   while IFS= read -r filepath
   do 
 echo "deleting the file: $filepath" | tee -a $LOG_FILE
-rm -rf $filepath
+rm -rf "$filepath"
+
 done  <<< "$FILES"
 
 echo "logsfiles olderthan 14 days deleted"
@@ -73,10 +76,7 @@ echo "logsfiles olderthan 14 days deleted"
   fi
   else 
   echo "no files hear"
- 
-  fi
-
-
+ fi
 
 VALIDATE(){
 if [ $1 -eq 0 ]
